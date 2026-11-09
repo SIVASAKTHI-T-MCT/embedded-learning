@@ -6,3 +6,10 @@
 !*.md
 !*.txt
 !.gitignore
+!*.s
+!*.ld
+!.project
+!.cproject
+!*.ioc
+Debug/
+Release/

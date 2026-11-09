@@ -18,18 +18,20 @@ void toggle_bit(volatile uint32_t* num,uint8_t k){
 }
 int main(void)
 {
-    set_bit(&GPIOA.odr, 5);
+    int pin;
+    scanf("%d", &pin);
+    set_bit(&GPIOA.odr, pin);
     printf("%02x\n", GPIOA.odr);
-    toggle_bit(&GPIOA.odr, 5);
+    toggle_bit(&GPIOA.odr, pin);
     printf("%02x\n", GPIOA.odr);
-    toggle_bit(&GPIOA.odr, 5);
+    toggle_bit(&GPIOA.odr, pin);
     printf("%02x\n", GPIOA.odr);
-    clear_bit(&GPIOA.odr, 5);
+    clear_bit(&GPIOA.odr, pin);
     printf("%02x\n", GPIOA.odr);
 
-    set_bit(&GPIOA.moder, 10);
+    set_bit(&GPIOA.moder, 2*pin);
     printf("%02x\n", GPIOA.moder);
-    clear_bit(&GPIOA.moder, 11);
+    clear_bit(&GPIOA.moder, 2*pin+1);
     printf("%02x\n", GPIOA.moder);
 	printf("Hello\n");
 	return 0;
